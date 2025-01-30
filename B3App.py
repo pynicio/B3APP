@@ -164,5 +164,6 @@ def update_plot(add_clicks, clear_clicks, selected_stocks, selected_codigo, chec
     return checklist_options, selected_stocks, fig
 
 # Run the app
-if __name__ == "__main__":
-    app.run_server(host='0.0.0.0', port=8050)
+if __name__ == '__main__':
+    app.run_server(host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
+
