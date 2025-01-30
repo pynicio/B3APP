@@ -14,17 +14,7 @@ import dash_bootstrap_components as dbc
 file_path = "b3.csv"
 df = pd.read_csv(file_path, delimiter=";")
 
-# Step 1: Clean and Reformat the Data
 
-# A. Exclude unnecessary columns
-columns_to_drop = [
-    "DataReferencia", "AcaoAtualizacao", "CodigoIdentificadorNegocio",
-    "TipoSessaoPregao", "CodigoParticipanteComprador", "CodigoParticipanteVendedor"
-]
-df = df.drop(columns=columns_to_drop)
-
-# B. Exclude rows where 'CodigoInstrumento' has more than 5 characters
-df = df[df["CodigoInstrumento"].str.len() <= 5]
 
 # C. Reformat 'HoraFechamento' from xxxxxxxx to a proper time format
 def reformat_hora_fechamento(hora):
