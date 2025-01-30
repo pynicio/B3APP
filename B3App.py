@@ -11,7 +11,7 @@ import numpy as np
 import dash_bootstrap_components as dbc
 
 # Load the data from the CSV file
-file_path = "/Users/darwin/B3pyApp/B3.csv"
+file_path = "b3.csv"
 df = pd.read_csv(file_path, delimiter=";")
 
 # Step 1: Clean and Reformat the Data
