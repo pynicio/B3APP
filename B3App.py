@@ -60,6 +60,7 @@ df["PrecoNegocio"] = df["PrecoNegocio"].str.replace(",", ".").astype(float)
 
 # Initialize the Dash app with Bootstrap
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server  # This line is crucial
 
 # Calculate the mean price and count of transactions for each stock
 mean_prices = df.groupby("CodigoInstrumento")["PrecoNegocio"].mean().round(2)
